@@ -49,6 +49,8 @@
 
    
       ```
+
+      #update comments for recommit. Please ignore. This comment is for recommit purposes only.
 - Word count should not exceed (as a maximum) 500 words for each visualization (i.e. 
 300 words for your good example and 500 for your bad example)
 
