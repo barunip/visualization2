@@ -12,23 +12,42 @@
       ```
       Your answer...
 
+      Good Visualization: Where On Earth People Aren’t” by Agata Ketterick
+        Source: Tableau Public 
+        This dashboard visualizes global population density patterns using an interactive heat map and includes written insights.
+        A. Why it is good:
+        1. Substantive honesty & provenance. The dashboard focuses on a single, well‑defined question—where population density is <1 person/km²—reducing the chance of cherry‑picking or spurious comparisons. It pairs the map with concise written insights, which aligns with best practice to include clear sources/explanations (provenance rhetoric) to bolster perceived objectivity. 
+        2. Perceptual clarity. The primary focus is position on a map with a continuous color scale to visualize population sparsity in a low-cognitive‑load manner; this achieves the goal of spatial pattern recognition. 
+        3. Aesthetic restraint. Color is limited and functional, avoiding unnecessary 3D or heavy decoration. Typography is readable; visual hierarchy leads with the map, then supporting text/filters—consistent with cognitive‑load heuristics.
+        4. Purpose–audience–medium fit. Intended for a broad public audience on the web, the interactive map supports exploration without demanding advanced literacy. 
+        5. Reproducibility signals. Access to download/workbook and source notes make it easier to audit methods.
+
+        B. How to improve
+
+        1. Accessibility (color). Offer a color‑blind‑safe sequential palette (e.g., viridis) and ensure sufficient contrast for ramps and overlays
+        2. Alternative encodings. Add optional pattern/texture overlays for extreme sparsity so meaning isn’t color‑only
+        3. Descriptive text for screen readers. Provide alt‑text and a short data‑rich caption covering levels 2–3 content (summary stats, clusters, exceptions).
+        4. Explicit source & method card. Add a “methods” pop‑over describing data vintage, threshold choice, and pre‑processing; this strengthens provenance and reproducibility. [tableau.com]
 
 
 
 
+    BAD Visualization: “People on welfare” vs. “people with full‑time jobs” (2013)
+    Source: Media Matters 
+    Why it is bad:
+    1. Substantive accuracy fails. Context is not normalized. Apples‑to‑oranges comparison. Fox counted “anyone residing in a household with benefits” for the welfare number, but only individuals themselves employed for full‑time work, and many beneficiaries also work—compounding the distortion.
+    2. Perceptual framing. Viewers preattentively compare bar heights; truncation creates a large framing effect, the opposite of the “blank page” conventions (2D, clean layout, clear source line) that foster trust. 
+    3. Reproducibility & transparency. The broadcast graphic lacks adequate on‑screen methods/source context (definitions, time window, data lineage), failing  reproducibility guidance.
+    4. Cognitive load. Minimal labeling plus a deceptive scale increases extraneous load, forcing viewers to mentally reconcile the mismatch between numbers and bars and potentially leading to inccurate results (as likely intended)
 
+    How to improve
 
-      ```
-    - How could this data visualization have been improved?  
-      ```
-      Your answer...
+    1. Perceptual: Use a zero baseline for bars. Explicitly show absolute and % differences.
+    2. Substantive: Align definitions - compare people in households with benefits vs people in households with a full‑time worker, or compare individual beneficiaries vs individual full‑time workers—not mixed units. Cite sources directly on the image. 
+    3.Provide context: Small multiples for time (trend), and stratifications beneficiaries (i.e. working beneficiaries) would reduce framing effects and aid interpretation.
+    4. Accessibility: Use high‑contrast, readable sans‑serif fonts (≥12pt) and include alt‑text summarizing Level 2–3 content (e.g., “Two bars: 108.6M vs 101.7M; both in 2011; definitions differ”). 
 
-
-
-
-
-
-      
+   
       ```
 - Word count should not exceed (as a maximum) 500 words for each visualization (i.e. 
 300 words for your good example and 500 for your bad example)
