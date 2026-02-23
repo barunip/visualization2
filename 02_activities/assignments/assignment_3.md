@@ -8,22 +8,80 @@
 - Using Python and one other data visualization software (Excel or free alternative, Tableau Public, any other tool you prefer), create two distinct visualizations from your dataset of choice.  
 - For each visualization, describe and justify: 
     > What software did you use to create your data visualization?
+            Data set: Toronto’s 311 Service Requests – Customer Initiated Dataset 2025
+
+            1. Python 3.11 with pandas, seaborn, and matplotlib to clean, aggregate, and plot a multi‑series time‑trend for the year. 
+            Title: Toronto 311: Top Service Request Types by Month (2025)
+            
+
+            2. Tableau Public for an interactive ward‑level choropleth; data joins use City ward boundaries (25‑ward model, GeoJSON) and 2021 ward population. 
+            title: 311 Requests per 10,000 Residents by Ward (2025)
 
     > Who is your intended audience? 
+             Pytho Visual 1:
+             City operations leaders, councillors, and service managers who need seasonality and workload signals for staffing and vendor planning.
+
+             Tableau Public Visual 2:
+             Councillors, city planners, BI teams, and engaged residents comparing request rates across wards.
     
     > What information or message are you trying to convey with your visualization? 
-    
+            Pytho Visual 1:
+            Show when the highest‑volume request categories spike during the year (e.g., snow/road, tree maintenance, waste), enabling targeted resourcing and proactive outreach.
+
+            Tableau Public Visual 2:
+             Where per‑capita demand for City services is highest, after normalizing by population—surfacing hotspots that absolute counts can mask.
+
     > What aspects of design did you consider when making your visualization? How did you apply them? With what elements of your plots? 
+            Pytho Visual 1:
+            Comparability: consistent monthly granularity, same baseline (Jan–Dec).
+            Color & accessibility: color‑blind‑friendly palette; line styles + direct labeling so meaning is not conveyed by color alone. Minimum 4.5:1 contrast for text and 3:1 for non‑text UI elements (legend swatches, gridlines), per WCAG guidance. 
+            Clarity: thin grid, data‑ink forward, readable tick formatting, legend outside plot on wide screens.
+
+            Tableau Public Visual 2:
+            Normalization: requests per 10,000 residents using 2021 Census ward populations for fair comparisons. 
+            Map symbology: quantile bins; color‑blind‑safe sequential palette; tooltips with both rate and count (and top request type).
     
     > How did you ensure that your data visualizations are reproducible? If the tool you used to make your data visualization is not reproducible, how will this impact your data visualization? 
-    
+            Pytho Visual 1:
+            Fully scripted—from reading the official 2025 ZIP to export of a PNG—with pinned assumptions and deterministic transforms in a single notebook/script.
+            Source URL and snapshot date are documented in comments; running the script on the released 2025 file regenerates the figure exactly.
+
+            Tableau Public Visual 2:
+            Workbook published to Tableau Public (free) so reviewers can download the data and workbook; however, manual steps (style edits, map projection choices) reduce bit‑for‑bit reproducibility vs. scripted code. I mitigate this by exporting the ward‑level CSV from Python and documenting join keys and binning thresholds in the README
+             
+
     > How did you ensure that your data visualization is accessible?  
-    
+           Pytho Visual 1:
+           High‑contrast labels; color‑blind safe palette; multi‑channel encoding (line style + label).
+            Provided machine‑readable alt text template in code for posting to web or LMS; large export (300 DPI).
+
+            Tableau Public Visual 2:
+             Not relying on color only (tooltip text, legend ticks); ensuring contrast of labels and legend meets WCAG 2.2 thresholds
+
     > Who are the individuals and communities who might be impacted by your visualization?  
-    
+            Pytho Visual 1:
+            Residents reporting issues; operations crews; councillors; neighbourhoods with infrastructure stress.
+            Ethical note: avoid implying unmet need equals low request volume—reporting access varies geographically; dataset includes only geospatially validated locations and the five listed divisions
+
+            Tableau Public Visual 2:
+             Wards with aging infrastructure or limited digital access may be misrepresented; I include a tooltip disclaimer about coverage (only five divisions; location validation requirement)
+
     > How did you choose which features of your chosen dataset to include or exclude from your visualization? 
+
+            Pytho Visual 1:
+            Included: Service Request Creation Date and Time, Original Service Request Type, Service Request Status (excluding “Canceled”), to reflect public demand; monthly aggregation for comparability.
+            Excluded: backend reclassified types to keep the customer’s original problem wording (per dataset notes)
+
+            Tableau Public Visual 2:
+             Included: 2025 counts by Service Request Ward (normalized by 2021 ward population).
+            Excluded: fine‑grained point mapping (privacy, over‑interpretation risk) and historical years (scope focus).
     
     > What ‘underwater labour’ contributed to your final data visualization product?
+           Pytho Visual 1: 
+           Unzipping & concatenating monthly/partitioned CSVs; coercing timestamps; status filtering; normalizing category labels; handling null wards; verifying duplicates; exporting reproducible artifacts.
+
+           Tableau Public Visual 2:
+            Extracting ward numbers from the dataset’s ward field, deduping name/number variations, verifying the 25‑ward join to GeoJSON, normalizing per‑capita, and documenting the pipeline.
 
 - This assignment is intentionally open-ended - you are free to create static or dynamic data visualizations, maps, or whatever form of data visualization you think best communicates your information to your audience of choice! 
 - Total word count should not exceed **(as a maximum) 1000 words** 
